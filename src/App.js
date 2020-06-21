@@ -1,25 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from 'react'
+import { Provider } from 'react-redux'
+import store from './store'
+import { BrowserRouter, Route} from 'react-router-dom'
+import routes from './router/index'
 
 function App() {
+  /* exact的意思是完全匹配才渲染dom */
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Provider store={store}>
+        <BrowserRouter>
+          <div>
+            {
+              routes.map((routeItem, key) => {
+                if (routeItem.exact) {
+                  return (
+                    <Route key={key} path={routeItem.path} exact render={props => (<routeItem.component {...props} />)}></Route>
+                  )
+                } else {
+                  return (
+                    <Route key={key} path={routeItem.path} render={props => (<routeItem.component {...props} />)}></Route>
+                  )
+                }
+              })
+            }
+          </div>
+        </BrowserRouter>
+      </Provider>
+    </Fragment>
   );
 }
 
