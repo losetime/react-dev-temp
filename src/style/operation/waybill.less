@@ -1,0 +1,133 @@
+.waybill-wrapper {
+    width: 100%;
+    height: 100%;
+    .search-handle-wrap {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        background-color: @bgColorLight;
+        padding: 20px;
+        box-sizing: border-box;
+        .search-input{
+            width: 30%;
+            margin: 0 10px;
+            &:nth-child(1){
+                margin-left: 0;
+            }
+        }
+        .search-btn{
+            margin-left: 40px;
+        }
+    }
+    .table-wrap {
+        width: 100%;
+        height: calc(100% - 101px);
+        margin-top: 20px;
+        background-color: @bgColorLight;
+        .handle-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            box-sizing: border-box;
+            .handle-left-wrap {
+                .search-btn {
+                    &:nth-child(1) {
+                        margin-right: 20px;
+                    }
+                }
+            }
+        }
+        .table-content-wrap {
+            padding: 0 20px;
+            box-sizing: border-box;
+            .ant-table{
+                font-size:12px;
+            }
+        }
+    }
+}
+
+.detail-dialog-wrap {
+    width: 100%;
+    .ant-form-inline .ant-form-item {
+        width: 48%!important;
+        margin-top: 20px;
+    }
+    .ant-form-item-label {
+        width: 30%;
+        text-align: left;
+    }
+    .form-title {
+        display: flex;
+        justify-content: space-between;
+        font-size: @fontSize16;
+        color: @fontColorDark;
+        margin-bottom:15px;
+        &:nth-child(1) {
+            .waybill-status{
+                background-color: #E4FDEF;
+                color: #50E38F;
+                padding:10px 26px;
+                box-sizing: border-box;
+            }
+        }
+        &:nth-child(3) {
+            margin-top: 20px;
+            .pay-status{
+                color: #F84507;
+            }
+        }
+    }
+    .waybill-info-wrap, .pay-info-wrap {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        font-size: 12px;
+        div {
+            width: 48%;
+            display: flex;
+            margin-bottom: 15px;
+            p {
+                width: 150px;
+            }
+        }
+    }
+}
+
+.pay-again-dialog-wrap {
+    .pay-title-wrap {
+        border-bottom: 1px solid #EEEEEE;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        p:nth-child(1){
+            margin-bottom: 10px;
+            font-size: @fontSize16;
+        }
+        p:nth-child(2){
+            font-size: @fontSize14;
+            color:#333333;
+        }
+    }
+    .pay-table-wrap {
+
+    }
+    .pay-info-wrap {
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+        font-size: @fontSize14;
+        color: #333333;
+    }
+    .pay-password-wrap {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        .ant-input{
+            width: 30%;
+        }
+    }
+}

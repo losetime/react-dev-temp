@@ -1,0 +1,35 @@
+.header-wrapper {
+    width: 100%;
+    height: 80px;
+    background-color: @headerBgColor;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: @fontColorLight;
+    .logo-wrap {
+        width: 240px;
+        height: 100%;
+        background-color: @logoBgColor;
+    }
+    .info-wrap {
+        width: calc(100% - 240px);
+        display: flex;
+        .current-router-wrap {
+            flex: 1;
+            font-size: @fontSize18;
+            margin-left: 20px;
+        }
+        .user-wrap {
+            width: 250px;
+            display: flex;
+            justify-content: space-around;
+            .user-name-wrap, .quite-wrap{
+                display: flex;
+                p {
+                    margin-left: 10px;
+                    font-size: @fontSize14;
+                }
+            }
+        }
+    }
+}
